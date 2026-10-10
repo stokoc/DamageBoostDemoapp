@@ -3,12 +3,7 @@ name: Build Android APK
 on:
   push:
     branches: [ "main" ]
-<<<<<<< HEAD
-  pull_request:
-    branches: [ "main" ]
-=======
   workflow_dispatch:
->>>>>>> 8fe6c92
 
 jobs:
   build:
@@ -24,18 +19,6 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-<<<<<<< HEAD
-    - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@v3
-
-    - name: Make gradlew executable
-      run: chmod +x gradlew
-
-    - name: Build APK with Gradle
-      run: ./gradlew assembleDebug
-
-    - name: Upload APK Artifact
-=======
     - name: Make gradlew executable
       run: chmod +x gradlew
 
@@ -43,7 +26,6 @@ jobs:
       run: ./gradlew assembleDebug --stacktrace
 
     - name: Upload APK
->>>>>>> 8fe6c92
       uses: actions/upload-artifact@v4
       with:
         name: app-debug
