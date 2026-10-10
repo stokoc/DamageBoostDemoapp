@@ -25,8 +25,11 @@ jobs:
     - name: Build Debug APK
       run: ./gradlew assembleDebug --stacktrace
 
-    - name: Upload APK
+    - name: Find and Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: app-debug
-        path: '**/*.apk'
+        path: |
+          app/build/outputs/apk/debug/*.apk
+          build/outputs/apk/debug/*.apk
+          **/*.apk
